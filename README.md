@@ -1,4 +1,4 @@
-# 🏠 Ymmo - Plateforme Immobilière Centralisée & IA
+# 🏠 Ymmo
 
 [![Bachelor 2](https://img.shields.io/badge/Ynov-Bachelor_2-blue.svg)](https://www.ynov.com/)
 [![Speciality](https://img.shields.io/badge/UF-INFRA_%26_DEV-orange.svg)](https://www.ynov.com/)
@@ -96,6 +96,3 @@ Ouvrez simplement `frontend/index.html` dans votre navigateur ou utilisez l'exte
 Le projet est réalisé en équipe de 2 personnes, suivant les principes **SOLID**, **DRY** et **KISS** pour la qualité de code, et utilisant **Git** pour le versionning collaboratif.
 
 ---
-
-## 📜 Licence
-Ce projet est réalisé dans un cadre pédagogique pour **Ynov Informatique**.

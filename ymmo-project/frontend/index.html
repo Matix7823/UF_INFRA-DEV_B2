@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ymmo | L'Immobilier de Prestige</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="glass-header">
+        <nav class="navbar" aria-label="Navigation principale">
+            <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Ymmo.</a></div>
+            <div class="nav-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="data.html">Data & Marché</a>
+                <a href="agence.html">Notre Agence</a>
+                <a href="vip.html" class="nav-btn" id="nav-vip-btn">Espace Privé</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">L'Excellence <br><span>Immobilière</span></h1>
+            <p class="hero-subtitle">Villas d'architectes et attiques luxueux, guidés par la précision de l'IA.</p>
+            
+            <form action="portfolio.html" method="GET" class="hero-search-glass" role="search">
+                <div class="search-input-group">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <input type="number" name="prix_min" placeholder="Budget Min" aria-label="Prix minimum">
+                </div>
+                <div class="search-input-group">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <input type="number" name="prix_max" placeholder="Budget Max" aria-label="Prix maximum">
+                </div>
+                <div class="search-input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" name="ville" placeholder="Localisation" aria-label="Ville">
+                </div>
+                <button type="submit" class="btn-primary">Découvrir</button>
+            </form>
+        </div>
+    </section>
+
+    <main class="main-container">
+        
+        <!-- Section Featured Properties -->
+        <section class="properties-section" style="margin-top: 4rem;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:2rem;">
+                <div>
+                    <h2 class="section-title">Dernières <span>Exclusivités</span></h2>
+                    <p class="section-desc" style="margin-bottom:0;">Sélection des biens off-market fraîchement intégrés.</p>
+                </div>
+                <a href="portfolio.html" class="btn-secondary" style="text-decoration:none;">Voir le portfolio</a>
+            </div>
+            
+            <!-- Partial injection of properties using JS logic built-in -->
+            <div id="index-featured-list" class="properties-grid" role="list">
+                <!-- Fetching happens below via JS or inline -->
+                <div class="skeleton-loader skeleton-full">Chargement des pépites du moment...</div>
+            </div>
+        </section>
+
+        <!-- Section Notre Agence (Teaser) -->
+        <section class="about-section glass-panel" style="margin-top: 6rem;">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">L'Art de Vivre <br><span>Signature Ymmo</span></h2>
+                    <p class="section-desc" style="margin-top: 1.5rem;">Fondée par des experts de la Data Science et de l'immobilier de prestige, notre maison redéfinit les codes de l'investissement.</p>
+                    <a href="agence.html" class="btn-secondary" style="display:inline-block; margin-top:1rem; text-decoration:none;">En savoir plus sur nous</a>
+                </div>
+                <div class="about-imagery">
+                    <img src="assets/images/penthouse.png" alt="Vue luxueuse agence" class="about-img main-img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mega-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">Ymmo.</div>
+                <p>La quintessence de l'immobilier sublimée par l'intelligence artificielle.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Siège Social</h4>
+                <p><i class="fa-solid fa-map-pin"></i> 10 Cours Mirabeau<br>13100 Aix</p>
+                <p><i class="fa-solid fa-phone"></i> +33 (0)4 42 01 02 03</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

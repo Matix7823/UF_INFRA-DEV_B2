@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Ymmo Prestige</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="padding-top: 100px;">
+    <header class="glass-header" style="background: rgba(255, 255, 255, 0.95); box-shadow: var(--shadow-soft);">
+        <nav class="navbar" aria-label="Navigation principale">
+            <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Ymmo.</a></div>
+            <div class="nav-links">
+                <a href="portfolio.html" style="color:var(--primary);">Portfolio</a>
+                <a href="data.html">Data & Marché</a>
+                <a href="agence.html">Notre Agence</a>
+                <a href="vip.html" class="nav-btn" id="nav-vip-btn">Espace Privé</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="properties-section">
+            <h2 class="section-title">Notre Collection</h2>
+            <p class="section-desc">Explorez notre sélection restreinte de propriétés d'exception.</p>
+
+            <form id="portfolio-search-form" class="hero-search-glass" style="margin-bottom: 3rem; background:white; position:relative;" onsubmit="handlePortfolioSearch(event)">
+                <div class="search-input-group">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <input type="number" id="pf-prix-min" placeholder="Budget Min">
+                </div>
+                <div class="search-input-group">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <input type="number" id="pf-prix-max" placeholder="Budget Max">
+                </div>
+                <div class="search-input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="pf-ville" placeholder="Localisation">
+                </div>
+                <button type="submit" class="btn-primary">Filtrer</button>
+            </form>
+
+            <div id="properties-list" class="properties-grid" role="list">
+                <div class="skeleton-loader skeleton-full">Recherche algorithmique en cours...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modale de Détail Propriété -->
+    <div id="property-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Property detail">
+                    <div class="modal-gradient-bottom"></div>
+                    <div class="modal-badge">Exclusivité Ymmo</div>
+                </div>
+                <div class="modal-info">
+                    <div class="modal-info-scroll">
+                        <div id="modal-price" class="modal-price"></div>
+                        <h2 id="modal-title" class="modal-title"></h2>
+                        <p class="modal-location"><i class="fa-solid fa-location-dot"></i> <span id="modal-location-text"></span></p>
+                        
+                        <div class="modal-metrics">
+                            <div title="Surface"><i class="fa-solid fa-ruler-combined"></i> <span id="modal-surface"></span></div>
+                            <div title="Chambres"><i class="fa-solid fa-bed"></i> <span id="modal-chambres"></span></div>
+                            <div class="dpe-badge" id="modal-dpe">DPE: ?</div>
+                        </div>
+                        <div class="modal-specs-divider"></div>
+                        <p id="modal-desc" class="modal-desc"></p>
+                        <div class="modal-equipments">
+                            <h3><i class="fa-solid fa-gem"></i> Prestations Haut de Gamme</h3>
+                            <ul id="modal-equip-list"></ul>
+                        </div>
+                    </div>
+                    <div class="modal-action-bar">
+                        <button class="btn-primary modal-contact-btn" onclick="alert('L\'agent en charge de ce bien vous contactera sous 24h.')"><i class="fa-solid fa-envelope"></i> Demander un livret</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

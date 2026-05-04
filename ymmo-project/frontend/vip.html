@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace VIP | Ymmo Prestige</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="padding-top: 100px;">
+    <header class="glass-header" style="background: rgba(255, 255, 255, 0.95); box-shadow: var(--shadow-soft);">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">Ymmo.</a></div>
+            <div class="nav-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="data.html">Data & Marché</a>
+                <a href="agence.html">Notre Agence</a>
+                <a href="vip.html" class="nav-btn" id="nav-vip-btn" style="background: var(--dark); color: white;">Espace Privé</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- Section Auth -->
+        <section id="auth" class="auth-section glass-panel">
+            <div style="text-align:center;">
+                <h2 id="auth-title" class="section-title">Accès Réseau National</h2>
+                <p class="section-desc">Réservé aux apporteurs d'affaires et clients VIP.</p>
+            </div>
+            
+            <div class="auth-forms" id="auth-forms">
+                <article class="form-card">
+                    <h3>Demande d'Accès</h3>
+                    <div class="input-wrapper">
+                        <input type="email" id="register-email" placeholder=" " required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" id="register-password" placeholder=" " required>
+                        <label>Mot de passe</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="register-nom" placeholder=" " required>
+                        <label>Nom Complet</label>
+                    </div>
+                    <button class="btn-secondary" onclick="register()">Soumettre dossier</button>
+                </article>
+
+                <article class="form-card">
+                    <h3>Connexion Membre</h3>
+                    <div class="input-wrapper">
+                        <input type="email" id="login-email" placeholder=" " required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" id="login-password" placeholder=" " required>
+                        <label>Mot de passe</label>
+                    </div>
+                    <button class="btn-primary" onclick="login()">Authentification</button>
+                </article>
+            </div>
+            <div id="auth-result" class="result" aria-live="polite"></div>
+            
+            <!-- Logout Button (Hidden initially) -->
+            <div id="logout-container" style="display:none; text-align:center; margin-top:2rem;">
+                <button class="btn-secondary" onclick="logout()"><i class="fa-solid fa-power-off"></i> Se déconnecter</button>
+            </div>
+        </section>
+
+
+
+        <!-- Ajouter propriété (VIP) -->
+        <section id="add-property" class="add-property-section glass-panel mt-4" style="display: none;">
+            <h2 class="section-title">Publier un mandat exclusif</h2>
+            
+            <div class="upload-grid">
+                <div class="input-wrapper">
+                    <input type="text" id="prop-titre" placeholder=" " required>
+                    <label>Titre de l'annonce</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="number" id="prop-prix" placeholder=" " required>
+                    <label>Prix Net Vendeur (€)</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="number" id="prop-surface" placeholder=" " required>
+                    <label>Surface Habitable (m²)</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="number" id="prop-chambres" placeholder=" " required>
+                    <label>Chambres</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="prop-ville" placeholder=" " required>
+                    <label>Ville</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="prop-dpe" placeholder=" " maxlength="1">
+                    <label>Note DPE (A-G)</label>
+                </div>
+                <div class="input-wrapper" style="grid-column: 1 / -1;">
+                    <textarea id="prop-description" placeholder=" " rows="4" required></textarea>
+                    <label>Description immersive</label>
+                </div>
+                <button class="btn-primary" style="grid-column: 1 / -1;" onclick="createProperty()"><i class="fa-solid fa-paper-plane"></i> Enregistrer la signature</button>
+            </div>
+            <div id="add-result" class="result" aria-live="polite"></div>
+        </section>
+
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

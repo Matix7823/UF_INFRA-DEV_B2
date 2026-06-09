@@ -1,8 +1,6 @@
 flask
 flask-cors
-pymongo
+pyodbc
 python-dotenv
-bcrypt
 pyjwt
-pandas
-numpy
+bcrypt

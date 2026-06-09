@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://127.0.0.1:5000/api';
 let currentToken = null;
 let currentPropertiesList = [];
 
@@ -81,7 +81,7 @@ async function login(forcedEmail = null, forcedPassword = null) {
     if (typeof forcedPassword === 'string' && forcedPassword) password = forcedPassword;
 
     try {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        const response = await fetch(`${API_URL}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -185,7 +185,7 @@ async function searchProperties(pMin = '', pMax = '', pVille = '') {
             return `
             <div class="property-card" onclick="openModal(${idx}, '${imgPath}')" style="animation-delay: ${idx * 0.1}s">
                 <div class="prop-img-wrapper">
-                    <div class="prop-badge">${prop.status === 'disponible' ? 'Nouveauté' : 'Vendu'}</div>
+                    <div class="prop-badge">${prop.status === 'vendu' ? 'Vendu' : 'Nouveauté'}</div>
                     <div class="dpe-tag ${dpeClass}">DPE: ${prop.dpe || 'A'}</div>
                     <img src="${imgPath}" alt="Photo de ${prop.titre}" loading="lazy">
                 </div>
